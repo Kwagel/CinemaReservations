@@ -2,27 +2,41 @@ package controllers;
 
 import views.ReservationMenuView;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 public class ReservationMenuController {
     
     public static void main(String[] args) {
+        LocalDateTime timeDate = LocalDateTime.now();
+        DateTimeFormatter formattedDate = DateTimeFormatter.ofPattern("EEEE d MMMM H:m");
+        System.out.println(timeDate.format(formattedDate));
+        
+        
+        Date date = new Date();
+        System.out.println(date);
+        
         ReservationMenuView rMenuView = new ReservationMenuView();
-        rMenuView.displayResMenu();
+        rMenuView.displayMainMenu();
     }
     
     public void parseChoice(int choice) {
         switch (choice) {
             
             case 1:
-                newReservation();
+                NewReservationController newRC = new NewReservationController();
+                newRC.newReservation();
                 break;
             case 2:
-                viewReservation();
+//                viewReservation();
                 break;
             case 3:
-                editReservation();
+//                editReservation();
                 break;
             case 4:
-                deleteReservation();
+//                deleteReservation();
                 break;
             case 5:
                 System.out.println("Thank you for using K Cinema's! Please come again!");

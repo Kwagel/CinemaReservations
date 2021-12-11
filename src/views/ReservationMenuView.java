@@ -6,10 +6,8 @@ import models.Film;
 import java.util.Scanner;
 
 public class ReservationMenuView {
-    public void ReservationMenuView(){
-        Film HarryPotter = new Film();
-    }
-    public void displayResMenu() {
+  
+    public void displayMainMenu() {
         System.out.println("Menu");
         System.out.println("---------");
         System.out.println("1 - New Reservation");
