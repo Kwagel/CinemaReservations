@@ -1,22 +1,20 @@
 package models;
 
 import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDateTime;
 
 public class Showing {
-	Film film;
-	Screen screen;
-	public Date time;
+	private Screen screen;
+	private LocalDateTime time;
 	private int Attendees;
 	
-	public Showing(Film film, Screen screen, Date time, int attendees) {
-		this.film = film;
+	public Showing(Screen screen, LocalDateTime time) {
 		this.screen = screen;
 		this.time = time;
-		Attendees = attendees;
+		Attendees = 0;
 	}
 	
-//	public void changeShowing(Booking booking, Film film, Screen screen, Date time){
+	//	public void changeShowing(Booking booking, Screen screen, Date time){
 //		for (int i = 0 ; i < timetable.size(); i++){
 //			if (timetable.get(i).getFilm().equals(film) && timetable.get(i).getScreen().equals(film) && timetable.get(i).getTime().equals(time) ) {
 //				this.film = film;
@@ -27,21 +25,24 @@ public class Showing {
 //		}
 //	 }
 	
-	public Film getFilm() {
-		return film;
-	}
+
 	
 	public Screen getScreen() {
 		return screen;
 	}
 	
-	public Date getTime() {
+	public LocalDateTime getTime() {
 		return time;
+	}
+	
+	public void setTime(LocalDateTime time) {
+		this.time = time;
 	}
 	
 	public void removeAttendees(Booking booking) {
 		this.Attendees += booking.getTickets();
 	}
+	
 	public void addAttendees(Booking booking) {
 		this.Attendees += booking.getTickets();
 	}

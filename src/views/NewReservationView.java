@@ -15,8 +15,8 @@ public class NewReservationView {
         System.out.println(" Finally, please enter the number of Tickets");
         int bookingTicketsNum = lib.scanInt();
         System.out.println("Please choose a film now :)");
-        ShowingsMenuController filmMC = new ShowingsMenuController();
-        filmMC.displayFilms();
+        ShowingsMenuController sMC = new ShowingsMenuController();
+        sMC.displayShowings();
        
 
     }

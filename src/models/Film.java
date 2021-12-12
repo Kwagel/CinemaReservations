@@ -21,6 +21,14 @@ public class Film {
         this.filmName = filmName;
     }
     
+    public int getFilmLength() {
+        return filmLength;
+    }
+    
+    public int getAgeRating() {
+        return ageRating;
+    }
+    
     public String[] getViewingRes() {
         return viewingRes;
     }
